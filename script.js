@@ -1,5 +1,5 @@
 // GTA 6 release date
-const releaseDate = new Date("May 26, 2026 00:00:00");
+const releaseDate = new Date("November 19, 2026 00:00:00");
 
 const monthsEl = document.getElementById('months');
 const daysEl = document.getElementById('days');
