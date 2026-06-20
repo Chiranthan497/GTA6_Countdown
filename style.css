@@ -265,3 +265,92 @@ h2 {
         font-size: 1rem;
     }
 }
+
+/* ── Paste these at the bottom of your style.css ── */
+
+/* Subsection divider labels ("Trailers" / "Latest from Rockstar") */
+.subsection-label {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    max-width: 860px;
+    width: 100%;
+    margin: 0 auto 1.25rem;
+    padding: 0 0.5rem;
+    box-sizing: border-box;
+}
+
+.subsection-label::before,
+.subsection-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.subsection-label span {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.15rem;
+    letter-spacing: 0.2em;
+    color: rgba(255, 255, 255, 0.38);
+    white-space: nowrap;
+}
+
+/* Two-column tweet grid */
+.tweets-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 0.5rem;
+    box-sizing: border-box;
+}
+
+/* Individual tweet card */
+.tweet-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 14px;
+    padding: 1rem 1rem 0.25rem;
+    box-sizing: border-box;
+    transition: border-color 0.25s ease;
+}
+
+.tweet-card:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Badge above each tweet */
+.tweet-badge {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.18em;
+    color: #fdf8cc;
+    background: rgba(253, 248, 204, 0.08);
+    border: 1px solid rgba(253, 248, 204, 0.18);
+    border-radius: 20px;
+    padding: 0.25rem 0.8rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+}
+
+/* Let Twitter widget fill the card */
+.tweet-card .twitter-tweet {
+    width: 100% !important;
+    margin: 0 !important;
+    align-self: center;
+}
+
+/* Stack on mobile */
+@media screen and (max-width: 700px) {
+    .tweets-grid {
+        grid-template-columns: 1fr;
+    }
+    .tweet-card {
+        align-items: center;
+    }
+}
